@@ -16,6 +16,7 @@ import type { ZenodoReview } from './records/RequestType.ts';
 interface ZenodoOptions {
   accessToken: string;
   host?: string;
+  userAgent?: string;
   logger?: Logger;
 }
 
@@ -27,16 +28,23 @@ export class Zenodo {
   host: string;
   accessToken: string;
   baseURL: string;
+  userAgent?: string;
   logger?: Logger;
   authenticationState: ZenodoAuthenticationStatesType;
 
   constructor(options: ZenodoOptions) {
-    const { accessToken, host = 'sandbox.zenodo.org', logger } = options;
+    const {
+      accessToken,
+      host = 'sandbox.zenodo.org',
+      userAgent,
+      logger,
+    } = options;
     this.host = host;
     this.baseURL = `https://${host}/api/`;
     this.logger = logger;
     this.accessToken = accessToken;
     this.authenticationState = ZenodoAuthenticationStates.NOT_TRIED;
+    this.userAgent = userAgent;
   }
 
   /**
@@ -71,6 +79,10 @@ export class Zenodo {
 
     if (this.accessToken) {
       headers.set('Authorization', `Bearer ${this.accessToken}`);
+    }
+
+    if (this.userAgent) {
+      headers.set('User-Agent', this.userAgent);
     }
 
     // can't use fetchZenodo to avoid circular dependency

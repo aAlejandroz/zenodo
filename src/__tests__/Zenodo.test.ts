@@ -29,6 +29,7 @@ test('no token', async ({ expect }) => {
   // @ts-expect-error we are testing the error
   const zenodo = new Zenodo({
     host: 'zenodo.org',
+    userAgent: 'test-user-agent',
   });
   const publicRecord = await zenodo.retrieveRecord(publicRecordId, {
     isPublished: true,
