@@ -1,6 +1,6 @@
 {
   "name": "zenodo",
-  "version": "4.2.0",
+  "version": "4.1.0",
   "description": "Node.js library to access the Zenodo API",
   "type": "module",
   "exports": {
@@ -26,9 +26,17 @@
     "tsc-build": "tsc --project tsconfig.build.json",
     "verify-build": "npm run tsc && node lib/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheminfo/zenodo.git"
+  },
   "keywords": [],
   "author": "Michaël Zasso",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheminfo/zenodo/issues"
+  },
+  "homepage": "https://github.com/cheminfo/zenodo#readme",
   "dependencies": {
     "@zip.js/zip.js": "^2.8.26",
     "delay": "^7.0.0",
