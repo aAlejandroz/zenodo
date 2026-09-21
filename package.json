@@ -29,10 +29,6 @@
   "keywords": [],
   "author": "Michaël Zasso",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cheminfo/zenodo/issues"
-  },
-  "homepage": "https://github.com/cheminfo/zenodo#readme",
   "dependencies": {
     "@zip.js/zip.js": "^2.8.26",
     "delay": "^7.0.0",
