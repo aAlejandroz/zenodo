@@ -26,10 +26,6 @@
     "tsc-build": "tsc --project tsconfig.build.json",
     "verify-build": "npm run tsc && node lib/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cheminfo/zenodo.git"
-  },
   "keywords": [],
   "author": "Michaël Zasso",
   "license": "MIT",
